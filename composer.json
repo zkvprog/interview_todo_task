@@ -1,0 +1,12 @@
+{
+    "name": "zkvprog/interview-todo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "jwage/purl": "^0.0.9"
+    }
+}
