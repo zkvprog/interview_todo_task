@@ -19,7 +19,11 @@ class Paginator
             return false;
         } else {
             $url = new Url(Url::fromCurrent());
-            $url->query->set('page', $this->currentPage - 1);
+            if ($this->currentPage - 1 > 1) {
+                $url->query->set('page', $this->currentPage - 1);
+            } else {
+                $url->query->remove('page');
+            }
             return $url;
         }
     }
