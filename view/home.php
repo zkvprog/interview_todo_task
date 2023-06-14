@@ -31,6 +31,11 @@
                         <th scope="col">
                             Title
                         </th>
+                        <th scope="col">
+                            <a class="<?= $sort === 'completed' ? 'link-secondary' : '' ?>"
+                               href="/?sort=completed_<?= $sort === 'completed' && $sortDirection === 'asc' ? 'desc' : 'asc'?>"
+                            >Status</a>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,6 +44,7 @@
                             <td><?=$task->name?></td>
                             <td><?=$task->email?></td>
                             <td><?=$task->title?></td>
+                            <td><?=$task->completed ? 'completed' : 'pending'?></td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
