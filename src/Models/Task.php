@@ -10,6 +10,13 @@ class Task
     public string $title;
     public int $completed;
 
+    public function __construct()
+    {
+        $this->name = htmlspecialchars($this->name);
+        $this->email = htmlspecialchars($this->email);
+        $this->title = htmlspecialchars($this->title);
+    }
+
     public static function createFromArray(array $data): self
     {
         $task = new self();

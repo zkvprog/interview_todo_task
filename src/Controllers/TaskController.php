@@ -31,9 +31,9 @@ class TaskController
     public function create()
     {
         $data = [
-            'name' => $_POST['name'],
-            'email' => $_POST['email'],
-            'title' => $_POST['title']
+            'name' => strip_tags($_POST['name']),
+            'email' => strip_tags($_POST['email']),
+            'title' => strip_tags($_POST['title'])
         ];
 
         $task = Task::createFromArray($data);
